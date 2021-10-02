@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  lettherebelite:
+    image: ghcr.io/brandoncamenisch/release-the-code-litecoin/litecoin:${LITECOIN_VERSION-0.18.1}
+    build:
+      context: .   
+      target: lettherebelite
+      args:
+        LITECOIN_VERSION: ${LITECOIN_VERSION-0.18.1}
+
+    container_name: lettherebelite-${LITECOIN_VERSION-0.18.1}
